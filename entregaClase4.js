@@ -51,11 +51,8 @@ class productManager {
         product["id"] = this.products[this.products.length - 1]["id"] + 1;
       }
 
-      if (esIndefinido(title, description, price, thumbnail, code, stock)) {
-        console.log("hay un valor indefinido");
-      }
       this.products.push(product);
-      fs.promises.writeFile(this.path,JSON.stringify(this.products,null,"\t"))
+      fs.writeFileSync(this.path, JSON.stringify(this.products, null, "\t"));
     }
   }
 
@@ -73,21 +70,25 @@ class productManager {
     }
   }
 
-  deleteProducts(){
-    
+  deleteProducts(id) {
+    if (this.products.some((item) => item.id == id)) {
+      this.products = this.products.filter((item) => item.id != id);
+      console.log(this.products);
+    } else {
+      console.log("No existe un elemento con ese ID");
+    }
   }
 
-  
-  updateProducts(id,propToUpt,info){
-    let productToUpdate = this.products.find((item) => item.id === id)
-    productToUpdate[propToUpt] = info;
-    console.log(productToUpdate)
+  updateProducts(id, propToUpt, info) {
+    this.products[id - 1][propToUpt] = info;
+    fs.writeFileSync(this.path, JSON.stringify(this.products, null, "\t"));
   }
-
 }
 //
 const productlist = new productManager();
-
+//
+//console.log(productlist.getProducts());
+//
 /*
 productlist.addProduct("Computadora", "PcBasica", 14, "*UrlImage*", 001, 5);
 productlist.addProduct("Teclado", "Teclado mecanico", 5, "asdasdsa", 002, 5);
@@ -97,7 +98,10 @@ productlist.addProduct("Monitor", "Monitor full hd", 9, "asdasdsa", 004, 5);
 productlist.addProduct("Ventilador", "PcBasica", "*UrlImage*", 005, 5);
 productlist.addProduct("Parlantes", "PcBasica", 14, "*UrlImage*", 001, 5);
 */
-
+//
 //console.log(productlist.getProducts());
+//
 //console.log(productlist.getProductById(3))
-productlist.updateProducts(1,"title","Computadoraa")
+//
+//productlist.updateProducts(1,"title","Computadora")
+productlist.deleteProducts(6);
