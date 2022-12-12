@@ -73,7 +73,7 @@ class productManager {
   deleteProducts(id) {
     if (this.products.some((item) => item.id == id)) {
       this.products = this.products.filter((item) => item.id != id);
-      console.log(this.products);
+      fs.writeFileSync(this.path, JSON.stringify(this.products, null, "\t"));
     } else {
       console.log("No existe un elemento con ese ID");
     }
@@ -87,21 +87,28 @@ class productManager {
 //
 const productlist = new productManager();
 //
-//console.log(productlist.getProducts());
-//
+console.log(productlist.getProducts());
+
 /*
+// Cargar productos
 productlist.addProduct("Computadora", "PcBasica", 14, "*UrlImage*", 001, 5);
 productlist.addProduct("Teclado", "Teclado mecanico", 5, "asdasdsa", 002, 5);
 productlist.addProduct("Mouse", "Mouse gamer", 4, "asdasdsa", 003, 5);
 productlist.addProduct("Monitor", "Monitor full hd", 9, "asdasdsa", 004, 5);
-//
+
+// Productos que no cumplen las condiciones
 productlist.addProduct("Ventilador", "PcBasica", "*UrlImage*", 005, 5);
 productlist.addProduct("Parlantes", "PcBasica", 14, "*UrlImage*", 001, 5);
 */
-//
-//console.log(productlist.getProducts());
-//
-//console.log(productlist.getProductById(3))
-//
-//productlist.updateProducts(1,"title","Computadora")
-productlist.deleteProducts(6);
+
+//Obtener lista de productos
+console.log(productlist.getProducts());
+
+//Obtener producto por Id
+console.log(productlist.getProductById(3))
+
+//Editar producto por Id 
+//productlist.updateProducts(1,"title","ComputadoraEdit")
+
+//Eliminar un producto por Id
+//productlist.deleteProducts(4);
