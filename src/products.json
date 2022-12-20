@@ -1,0 +1,92 @@
+[
+	{
+		"title": "Computadora",
+		"description": "PcBasica",
+		"price": 14,
+		"thumbnail": "*UrlImage*",
+		"code": 1,
+		"stock": 5,
+		"id": 1
+	},
+	{
+		"title": "Teclado",
+		"description": "Teclado mecanico",
+		"price": 5,
+		"thumbnail": "asdasdsa",
+		"code": 2,
+		"stock": 5,
+		"id": 2
+	},
+	{
+		"title": "Mouse",
+		"description": "Mouse gamer",
+		"price": 4,
+		"thumbnail": "asdasdsa",
+		"code": 3,
+		"stock": 5,
+		"id": 3
+	},
+	{
+		"title": "Monitor",
+		"description": "Monitor full hd",
+		"price": 9,
+		"thumbnail": "asdasdsa",
+		"code": 4,
+		"stock": 5,
+		"id": 4
+	},
+	{
+		"title": "Monitor",
+		"description": "Monitor medio hd",
+		"price": 5,
+		"thumbnail": "asdasdsa",
+		"code": 5,
+		"stock": 5,
+		"id": 5
+	},
+	{
+		"title": "Monitor",
+		"description": "no hd",
+		"price": 3,
+		"thumbnail": "asdasdsa",
+		"code": 6,
+		"stock": 5,
+		"id": 6
+	},
+	{
+		"title": "Parlantes",
+		"description": "parlantes random",
+		"price": 2,
+		"thumbnail": "asdasdsa",
+		"code": 7,
+		"stock": 5,
+		"id": 7
+	},
+	{
+		"title": "Parlantes",
+		"description": "parlantes premium",
+		"price": 5,
+		"thumbnail": "asdasdsa",
+		"code": 8,
+		"stock": 5,
+		"id": 8
+	},
+	{
+		"title": "Ojotas",
+		"description": "Ojota 3.0",
+		"price": 2,
+		"thumbnail": "asdasdsa",
+		"code": 9,
+		"stock": 5,
+		"id": 9
+	},
+	{
+		"title": "Remeras",
+		"description": "Remera seleccion",
+		"price": 15,
+		"thumbnail": "asdasdsa",
+		"code": 10,
+		"stock": 5,
+		"id": 10
+	}
+]
