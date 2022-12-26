@@ -88,5 +88,14 @@
 		"code": 10,
 		"stock": 5,
 		"id": 10
+	},
+	{
+		"title": "Placa video",
+		"description": "1660",
+		"price": 150000,
+		"thumbnail": "*UrlImage",
+		"code": 11,
+		"stock": 1,
+		"id": 11
 	}
 ]

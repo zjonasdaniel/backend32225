@@ -1,5 +1,5 @@
 //const fs = require("fs");
-import fs from 'fs';
+import fs from "fs";
 
 const esIndefinido = (a, b, c, d, e, f) => {
   if ((a, b, c, d, e, f) == undefined) {
@@ -22,18 +22,18 @@ class productManager {
       this.products.length > 0 &&
       this.products.some((item) => item.code === code)
     ) {
-      console.log(
+      return (
         'El producto con titulo "' +
-          title +
-          '" no se agrego, debido a que su propiedad "Code" ya fue ingresada en el sistema!'
+        title +
+        '" no se agrego, debido a que su propiedad "Code" ya fue ingresada en el sistema!'
       );
     } else if (
       esIndefinido(title, description, price, thumbnail, code, stock)
     ) {
-      console.log(
-        'El producto con titulo "' +
-          title +
-          '" no se agrego, debido a que no se ingresaron todos los datos!'
+      return (
+        'El producto con titulo "'+
+        title +
+        '" no se agrego, debido a que no se ingresaron todos los datos!'
       );
     } else {
       let product = {
@@ -113,10 +113,10 @@ productlist.addProduct("Parlantes", "PcBasica", 14, "*UrlImage*", 1 , 5);
 //Obtener producto por Id
 //console.log(productlist.getProductById(3))
 
-//Editar producto por Id 
+//Editar producto por Id
 //productlist.updateProducts(1,"title","ComputadoraEdit")
 
 //Eliminar un producto por Id
 //productlist.deleteProducts(4);
 
-export default new productManager()
+export default new productManager();
