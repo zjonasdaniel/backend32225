@@ -39,10 +39,10 @@ class productManager {
       let product = {
         title,
         description,
-        price,
+        price : parseInt(price),
         thumbnail,
-        code,
-        stock,
+        code : parseInt(code),
+        stock : parseInt(stock),
       };
 
       if (this.products.length === 0) {
