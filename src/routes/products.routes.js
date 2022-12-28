@@ -21,18 +21,27 @@ router.get("/:id", async (req, res) => {
   res.json(product);
 });
 router.post("/", (req, res) => {
-  const { title, description, price, thumbnail, code, stock } = req.body;
+  const { title, description, price, thumbnail, code, stock, statusbool, category } = req.body;
   let error = productManager.addProduct(
     title,
     description,
     price,
     thumbnail,
     code,
-    stock
+    stock,
+    statusbool,
+    category
   );
   if(error){
     throw new Error(error)
   }
+  res.status(201).json({ info: "Created"});
+});
+//en produccion
+router.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const context = req.body;
+  productManager.updateProducts(id,context)
   res.status(201).json({ info: "Created"});
 });
 

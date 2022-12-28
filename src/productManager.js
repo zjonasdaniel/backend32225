@@ -17,7 +17,7 @@ class productManager {
     }
   }
 
-  addProduct(title, description, price, thumbnail, code, stock) {
+  addProduct(title, description, price, thumbnail, code, stock, statusbool, category) {
     if (
       this.products.length > 0 &&
       this.products.some((item) => item.code === code)
@@ -28,7 +28,7 @@ class productManager {
         '" no se agrego, debido a que su propiedad "Code" ya fue ingresada en el sistema!'
       );
     } else if (
-      esIndefinido(title, description, price, thumbnail, code, stock)
+      esIndefinido(title, description, price, code, stock, category)
     ) {
       return (
         'El producto con titulo "'+
@@ -43,6 +43,8 @@ class productManager {
         thumbnail,
         code : parseInt(code),
         stock : parseInt(stock),
+        statusbool : statusbool || true,
+        category
       };
 
       if (this.products.length === 0) {
@@ -91,32 +93,32 @@ const productlist = new productManager();
 
 /*
 // Cargar productos
-productlist.addProduct("Computadora", "PcBasica", 14, "*UrlImage*", 1, 5);
-productlist.addProduct("Teclado", "Teclado mecanico", 5, "asdasdsa", 2, 5);
-productlist.addProduct("Mouse", "Mouse gamer", 4, "asdasdsa", 3, 5);
-productlist.addProduct("Monitor", "Monitor full hd", 9, "asdasdsa", 4, 5);
-productlist.addProduct("Monitor", "Monitor medio hd", 5, "asdasdsa", 5, 5);
-productlist.addProduct("Monitor", "no hd", 3, "asdasdsa", 6, 5);
-productlist.addProduct("Parlantes", "parlantes random", 2, "asdasdsa", 7, 5);
-productlist.addProduct("Parlantes", "parlantes premium", 5, "asdasdsa", 8, 5);
-productlist.addProduct("Ojotas", "Ojota 3.0", 2, "asdasdsa", 9, 5);
-productlist.addProduct("Remeras", "Remera seleccion", 15, "asdasdsa", 10, 5);
+productlist.addProduct("Computadora", "PcBasica", 14, "*UrlImage*", 1, 5, true ,"product");
+productlist.addProduct("Teclado", "Teclado mecanico", 5, "asdasdsa", 2, 5,true,"product");
+productlist.addProduct("Mouse", "Mouse gamer", 4, "asdasdsa", 3, 5,true,"product");
+productlist.addProduct("Monitor", "Monitor full hd", 9, "asdasdsa", 4, 5,true,"product");
+productlist.addProduct("Monitor", "Monitor medio hd", 5, "asdasdsa", 5, 5,true,"product");
+productlist.addProduct("Monitor", "no hd", 3, "asdasdsa", 6, 5,true,"product");
+productlist.addProduct("Parlantes", "parlantes random", 2, "asdasdsa", 7, 5,true,"product");
+productlist.addProduct("Parlantes", "parlantes premium", 5, "asdasdsa", 8, 5,true,"product");
+productlist.addProduct("Ojotas", "Ojota 3.0", 2, "asdasdsa", 9, 5,true,"product");
+productlist.addProduct("Remeras", "Remera seleccion", 15, "asdasdsa", 10, 5,true,"product");
 
 // Productos que no cumplen las condiciones
 productlist.addProduct("Ventilador", "PcBasica", "*UrlImage*", 5 , 5);
 productlist.addProduct("Parlantes", "PcBasica", 14, "*UrlImage*", 1 , 5);
-*/
+
 
 //Obtener lista de productos
-//console.log(productlist.getProducts());
+console.log(productlist.getProducts());
 
 //Obtener producto por Id
-//console.log(productlist.getProductById(3))
+console.log(productlist.getProductById(3))
 
 //Editar producto por Id
-//productlist.updateProducts(1,"title","ComputadoraEdit")
+productlist.updateProducts(1,"title","ComputadoraEdit")
 
 //Eliminar un producto por Id
-//productlist.deleteProducts(4);
-
+productlist.deleteProducts(4);
+*/
 export default new productManager();
