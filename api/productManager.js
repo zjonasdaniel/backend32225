@@ -125,5 +125,4 @@ productlist.updateProducts(1,"title","ComputadoraEdit")
 //Eliminar un producto por Id
 productlist.deleteProducts(4);
 */
-
 export default new productManager();
