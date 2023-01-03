@@ -88,5 +88,15 @@
 		"code": 10,
 		"stock": 5,
 		"id": 10
+	},
+	{
+		"title": "Pendrive",
+		"description": "pendrive 64gb",
+		"price": 2000,
+		"code": 12,
+		"stock": 20,
+		"statusbool": true,
+		"category": "perisfericos",
+		"id": 11
 	}
 ]
