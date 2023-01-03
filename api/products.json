@@ -1,11 +1,13 @@
 [
 	{
-		"title": "Computadora",
+		"title": "ComputadoraEdit",
 		"description": "PcBasica",
 		"price": 14,
 		"thumbnail": "*UrlImage*",
 		"code": 1,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 1
 	},
 	{
@@ -15,6 +17,8 @@
 		"thumbnail": "asdasdsa",
 		"code": 2,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 2
 	},
 	{
@@ -24,16 +28,9 @@
 		"thumbnail": "asdasdsa",
 		"code": 3,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 3
-	},
-	{
-		"title": "Monitor",
-		"description": "Monitor full hd",
-		"price": 9,
-		"thumbnail": "asdasdsa",
-		"code": 4,
-		"stock": 5,
-		"id": 4
 	},
 	{
 		"title": "Monitor",
@@ -42,15 +39,19 @@
 		"thumbnail": "asdasdsa",
 		"code": 5,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 5
 	},
 	{
-		"title": "Monitor",
-		"description": "no hd",
+		"title": "Disco ssd",
+		"description": "disco mas rapidito",
 		"price": 3,
 		"thumbnail": "asdasdsa",
 		"code": 6,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 6
 	},
 	{
@@ -60,6 +61,8 @@
 		"thumbnail": "asdasdsa",
 		"code": 7,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 7
 	},
 	{
@@ -69,6 +72,8 @@
 		"thumbnail": "asdasdsa",
 		"code": 8,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 8
 	},
 	{
@@ -78,6 +83,8 @@
 		"thumbnail": "asdasdsa",
 		"code": 9,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 9
 	},
 	{
@@ -87,7 +94,20 @@
 		"thumbnail": "asdasdsa",
 		"code": 10,
 		"stock": 5,
+		"statusbool": true,
+		"category": "product",
 		"id": 10
+	},
+	{
+		"title": "Placa video",
+		"description": "1080 ti",
+		"price": 150000,
+		"thumbnail": "asdasdsa",
+		"code": 11,
+		"stock": 5,
+		"statusbool": true,
+		"category": "product",
+		"id": 11
 	},
 	{
 		"title": "Pendrive",
@@ -97,6 +117,6 @@
 		"stock": 20,
 		"statusbool": true,
 		"category": "perisfericos",
-		"id": 11
+		"id": 12
 	}
 ]
