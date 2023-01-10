@@ -40,7 +40,7 @@ class productManager {
         title,
         description,
         price : parseInt(price),
-        thumbnail,
+        thumbnail : thumbnail || "*UrlImage",
         code : parseInt(code),
         stock : parseInt(stock),
         statusbool : statusbool || true,

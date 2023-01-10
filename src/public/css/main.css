@@ -1,0 +1,13 @@
+.formRTP{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50vw;
+}
+.formRTPcont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

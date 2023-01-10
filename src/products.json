@@ -118,5 +118,16 @@
 		"statusbool": true,
 		"category": "perisfericos",
 		"id": 12
+	},
+	{
+		"title": "Speed",
+		"description": "Bebida Energizante",
+		"price": 1,
+		"thumbnail": "*UrlImage",
+		"code": 13,
+		"stock": 10,
+		"statusbool": true,
+		"category": "Bebida",
+		"id": 16
 	}
 ]
