@@ -33,3 +33,9 @@ socket.on("arrayProducts", (data) => {
     `;
   });
 });
+
+socket.on("newProductResponse",(data)=> {
+  if(data!= null){
+    alert(data)
+  }
+})

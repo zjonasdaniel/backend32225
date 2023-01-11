@@ -2,9 +2,20 @@
 import fs from "fs";
 
 const esIndefinido = (a, b, c, d, e, f) => {
-  if ((a, b, c, d, e, f) == undefined) {
+  if (a =="" || a == null || a== undefined || a == NaN) {
+    return true;
+  }else if(b =="" || b == null || b == undefined || b == NaN){
+    return true;
+  }else if(c =="" || c == null || c == undefined || c == NaN){
+    return true;
+  }else if(d =="" || d == null || d == undefined || d == NaN){
+    return true;
+  }else if(e =="" || e == null || e == undefined || e == NaN){
+    return true;
+  }else if(f =="" || f == null || f == undefined || f == NaN){
     return true;
   }
+  return false
 };
 
 class productManager {
@@ -33,16 +44,16 @@ class productManager {
       return (
         'El producto con titulo "'+
         title +
-        '" no se agrego, debido a que no se ingresaron todos los datos!'
+        '" no se agrego, debido a que no se ingresaron correctamente todos los datos!'
       );
     } else {
       let product = {
         title,
         description,
-        price : parseInt(price),
+        price,
         thumbnail : thumbnail || "*UrlImage",
-        code : parseInt(code),
-        stock : parseInt(stock),
+        code,
+        stock,
         statusbool : statusbool || true,
         category
       };

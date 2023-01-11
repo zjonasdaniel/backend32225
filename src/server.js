@@ -32,9 +32,8 @@ io.on('connection', (socket) => {
   console.log("Alguien se ha conectado")
   socket.emit("arrayProducts", products)
   socket.on("newProduct",(data)=>{
-    console.log(data)
     const {title, description, price, thumbnail, code, stock, statusbool, category} = data
-    console.log(productManager.addProduct(title, description, price, thumbnail, code, stock, statusbool, category))
+    socket.emit("newProductResponse", productManager.addProduct(title, description, parseInt(price), thumbnail, parseInt(code), parseInt(stock), statusbool, category))
   })
   socket.on("deleteProduct",(data)=>{
     productManager.deleteProducts(data)
