@@ -20,7 +20,7 @@ const esIndefinido = (a, b, c, d, e, f) => {
 
 class productManager {
   constructor() {
-    this.path = "./products.json";
+    this.path = "./src/daos/fileManager/products.json";
     if (fs.existsSync(this.path)) {
       this.products = JSON.parse(fs.readFileSync(this.path, "utf-8"));
     } else {
