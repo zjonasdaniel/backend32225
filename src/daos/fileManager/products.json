@@ -3,7 +3,7 @@
 		"title": "ComputadoraEdit",
 		"description": "PcBasica",
 		"price": 14,
-		"thumbnail": "*UrlImage*",
+		"thumbnail": "https://www.tecnologia-informatica.com/wp-content/uploads/2018/08/caracteristicas-de-las-computadoras-1.jpeg",
 		"code": 1,
 		"stock": 5,
 		"statusbool": true,

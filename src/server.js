@@ -7,6 +7,7 @@ import fileViewsRouter from './routes/fileRoutes/views.routes.js';
 import dbProductsRoutes from "./routes/dbRoutes/products.routes.js";
 import dbCartsRoutes from "./routes/dbRoutes/carts.routes.js";
 import dbMessagesRoutes from "./routes/dbRoutes/messages.routes.js";
+import dbViewsRoutes from "./routes/dbRoutes/views.routes.js"
 import { Server } from 'socket.io';
 import productManager from "./daos/fileManager/productManager.js";
 import Handlebars from 'handlebars';
@@ -41,7 +42,7 @@ app.use(express.static(`${__dirname}/public`))
 app.use(express.urlencoded({ extended: true }))
 
 
-app.use('/', fileViewsRouter);
+app.use('/', dbViewsRoutes);
 app.use("/products", dbProductsRoutes);
 app.use("/carts", dbCartsRoutes);
 
