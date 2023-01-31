@@ -7,6 +7,7 @@ import fileViewsRouter from './routes/fileRoutes/views.routes.js';
 import dbProductsRoutes from "./routes/dbRoutes/products.routes.js";
 import dbCartsRoutes from "./routes/dbRoutes/carts.routes.js";
 import dbMessagesRoutes from "./routes/dbRoutes/messages.routes.js";
+import messagesDao from "./daos/dbManager/messages.dao.js";
 import dbViewsRoutes from "./routes/dbRoutes/views.routes.js"
 import { Server } from 'socket.io';
 import productManager from "./daos/fileManager/productManager.js";
@@ -48,14 +49,31 @@ app.use("/carts", dbCartsRoutes);
 
 let products = productManager.getProducts()
 
+let messages = [];
+
 io.on('connection', (socket) => {
   console.log("Alguien se ha conectado")
+
   socket.emit("arrayProducts", products)
+
   socket.on("newProduct",(data)=>{
     const {title, description, price, thumbnail, code, stock, statusbool, category} = data
     socket.emit("newProductResponse", productManager.addProduct(title, description, parseInt(price), thumbnail, parseInt(code), parseInt(stock), statusbool, category))
   })
+
   socket.on("deleteProduct",(data)=>{
     productManager.deleteProducts(data)
   })
+  
+  socket.on('inicio', async () => {
+    messages = await messagesDao.getAll()
+    io.sockets.emit('messageLogs', messages);
+    socket.broadcast.emit('connected', messages);
+  })
+
+  socket.on("message", (data) => {
+    messages.push(data)
+    messagesDao.addMessagge(data)
+    io.sockets.emit("messageLogs", messages);
+  });
 })

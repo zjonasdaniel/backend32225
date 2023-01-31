@@ -25,7 +25,13 @@
 
 <div class="seccion1">
   <div class="chatCont">
-    
+    <div>
+      <h1> Bienvenidos al chat </h1>
+      <input type="text" id="chatbox" />
+    </div>
+    <div>
+      <p id="messageLogs"></p>
+    </div>
   </div>
   <div class="productsCont">
     {{#each products}}
@@ -33,7 +39,12 @@
         <img src={{this.thumbnail}} class="card-img-top" alt={{this.title}} />
         <div class="card-body">
           <h5 class="card-title">{{this.title}}</h5>
-          <p class="card-text">{{this.description}} <br> Precio: ${{this.price}} <br> Stock: {{this.stock}}</p>
+          <p class="card-text">{{this.description}}
+            <br />
+            Precio: ${{this.price}}
+            <br />
+            Stock:
+            {{this.stock}}</p>
           <div>
             <button class="btn btn-primary">AddtoCart</button>
           </div>
@@ -42,3 +53,7 @@
     {{/each}}
   </div>
 </div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>
