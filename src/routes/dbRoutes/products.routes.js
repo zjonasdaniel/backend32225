@@ -4,20 +4,33 @@ import { Router } from "express";
 const router = Router();
 
 router.get("/", async (req, res) => {
+  let result, limit, query, sort, page;
   try {
-    const products = await productsDao.getAll();
-    res.json(products);
+    limit = parseInt(req.query.limit);
+    sort = parseInt(req.query.sort);
+    page = parseInt(req.query.page);
+    if (req.query.query) {
+      query = JSON.parse(req.query.query);
+    }
+    result = await productsDao.getAll(limit, query, sort, page);
+  } catch (e) {
+    result = await productsDao.getAll(limit, query, sort, page);
+  }
+  try {
+    res.json({
+      status: "success",
+      payload: result,
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.json({ error });
   }
 });
 
 router.get("/:id", async (req, res) => {
   try {
-    const product = await productsDao.getById(req.params.id);
-    res.json(product);
+    res.json(await productsDao.getById(req.params.id));
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.json({ error: error.message });
   }
 });
 

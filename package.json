@@ -20,12 +20,13 @@
   },
   "homepage": "https://github.com/zjonasdaniel/backend32225#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "socket.io": "^4.5.4",
+    "handlebars": "^4.7.7",
     "mongoose": "^6.9.0",
+    "mongoose-paginate-v2": "^1.7.1",
     "nodemon": "^2.0.20",
-    "@handlebars/allow-prototype-access": "^1.0.5",
-    "handlebars": "^4.7.7"
+    "socket.io": "^4.5.4"
   }
 }
